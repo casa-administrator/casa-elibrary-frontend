@@ -1,0 +1,114 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.auth-form__header {
+  margin-bottom: 10px;
+}
+
+.auth-form__eyebrow {
+  margin-bottom: 8px;
+
+  color:
+    var(--color-primary-600);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.auth-form__header h2 {
+  margin:
+    0 0 10px;
+
+  color:
+    var(--color-text-primary);
+
+  font-size: clamp(
+    28px,
+    4vw,
+    34px
+  );
+
+  line-height: 1.2;
+}
+
+.auth-form__header p {
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  line-height: 1.6;
+}
+
+.auth-form__error {
+  padding:
+    11px 13px;
+
+  border-radius:
+    var(--radius-md);
+
+  background: #fff2f0;
+
+  color:
+    var(--color-danger);
+
+  font-size: 13px;
+}
+
+.auth-form__back {
+  border: 0;
+
+  background: transparent;
+
+  color:
+    var(--color-primary-700);
+
+  font-weight: 600;
+}
+
+.auth-form__back:hover {
+  text-decoration: underline;
+}
+
+
+/* OTP */
+
+.otp-field {
+  width: 100%;
+
+  min-height: 56px;
+
+  text-align: center;
+
+  padding-left: 20px;
+
+  letter-spacing: 12px;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  border:
+    1px solid
+    var(--color-border-strong);
+
+  border-radius:
+    var(--radius-md);
+
+  outline: none;
+}
+
+.otp-field:focus {
+  border-color:
+    var(--color-primary-600);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(18, 122, 62, 0.1);
+}

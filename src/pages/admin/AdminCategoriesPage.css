@@ -1,0 +1,509 @@
+.admin-categories-page {
+  width: 100%;
+}
+
+
+.admin-categories-page__header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content:
+    space-between;
+
+  gap: 24px;
+
+  margin-bottom: 26px;
+}
+
+
+.admin-categories-page__header h1 {
+  margin:
+    0 0 7px;
+
+  font-size:
+    clamp(
+      25px,
+      4vw,
+      34px
+    );
+}
+
+
+.admin-categories-page__header p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  line-height: 1.6;
+}
+
+
+.admin-categories-page__add {
+  flex-shrink: 0;
+
+  min-height: 42px;
+
+  padding:
+    9px 16px;
+
+  border: 0;
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--color-primary-600);
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* Toolbar */
+
+.admin-categories-toolbar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+
+.admin-categories-toolbar input {
+  width: 100%;
+
+  max-width: 440px;
+
+  min-height: 42px;
+
+  padding:
+    9px 13px;
+
+  border:
+    1px solid
+    var(--color-border-strong);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--color-surface);
+
+  outline: none;
+}
+
+
+.admin-categories-toolbar input:focus {
+  border-color:
+    var(--color-primary-600);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(
+      18,
+      122,
+      62,
+      0.1
+    );
+}
+
+
+.admin-categories-toolbar__count {
+  color:
+    var(--color-text-secondary);
+
+  font-size: 13px;
+}
+
+
+/* Table */
+
+.admin-categories-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--color-surface);
+
+  box-shadow:
+    var(--shadow-sm);
+}
+
+
+.admin-categories-table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse:
+    collapse;
+}
+
+
+.admin-categories-table th,
+.admin-categories-table td {
+  padding:
+    14px 16px;
+
+  text-align: left;
+
+  border-bottom:
+    1px solid
+    var(--color-border);
+}
+
+
+.admin-categories-table th {
+  background:
+    var(--color-surface-soft);
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.admin-categories-table td {
+  color:
+    var(--color-text-secondary);
+
+  font-size: 13px;
+}
+
+
+.admin-categories-table
+tbody
+tr:last-child
+td {
+  border-bottom: 0;
+}
+
+
+.admin-categories-table
+tbody
+tr:hover {
+  background:
+    var(--color-primary-50);
+}
+
+
+/* Category info */
+
+.admin-category-info {
+  min-width: 290px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.admin-category-info strong {
+  color:
+    var(--color-text-primary);
+
+  font-size: 13px;
+}
+
+
+.admin-category-info span {
+  max-width: 340px;
+
+  overflow: hidden;
+
+  color:
+    var(--color-text-muted);
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  font-size: 11px;
+}
+
+
+.admin-category-info code {
+  max-width: 300px;
+
+  overflow: hidden;
+
+  color:
+    var(--color-primary-700);
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  font-size: 10px;
+}
+
+
+/* Document count */
+
+.admin-category-count {
+  min-width: 32px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    4px 8px;
+
+  border-radius: 999px;
+
+  background:
+    var(--color-primary-50);
+
+  color:
+    var(--color-primary-700);
+
+  font-weight: 700;
+}
+
+
+/* Sync */
+
+.admin-category-sync-status {
+  min-width: 150px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.admin-category-sync-status__connected {
+  color:
+    var(--color-success);
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.admin-category-sync-status small {
+  color:
+    var(--color-text-muted);
+
+  font-size: 10px;
+}
+
+
+/* Status */
+
+.admin-category-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.admin-category-status__dot {
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+}
+
+
+.admin-category-status--active {
+  color:
+    var(--color-success);
+}
+
+
+.admin-category-status--active
+.admin-category-status__dot {
+  background:
+    var(--color-success);
+}
+
+
+.admin-category-status--inactive {
+  color:
+    var(--color-text-muted);
+}
+
+
+.admin-category-status--inactive
+.admin-category-status__dot {
+  background:
+    var(--color-text-muted);
+}
+
+
+/* Actions */
+
+.admin-category-actions {
+  display: flex;
+
+  gap: 7px;
+}
+
+
+.admin-category-actions button {
+  min-height: 34px;
+
+  padding:
+    6px 10px;
+
+  border-radius:
+    var(--radius-sm);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.admin-category-actions__edit {
+  border:
+    1px solid
+    var(--color-border);
+
+  background:
+    var(--color-surface);
+
+  color:
+    var(--color-text-primary);
+}
+
+
+.admin-category-actions__sync {
+  border:
+    1px solid
+    #b2ddff;
+
+  background:
+    #eff8ff;
+
+  color:
+    #175cd3;
+}
+
+
+.admin-category-actions__danger {
+  border:
+    1px solid
+    #fecdca;
+
+  background:
+    #fff6f5;
+
+  color:
+    var(--color-danger);
+}
+
+
+.admin-category-actions__activate {
+  border:
+    1px solid
+    var(--color-primary-200);
+
+  background:
+    var(--color-primary-50);
+
+  color:
+    var(--color-primary-700);
+}
+
+
+.admin-category-actions
+button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* States */
+
+.admin-categories-state {
+  padding: 28px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--color-surface);
+}
+
+
+.admin-categories-state--error {
+  color:
+    var(--color-danger);
+}
+
+
+@media (
+  max-width: 639px
+) {
+  .admin-categories-page__header {
+    flex-direction:
+      column;
+  }
+
+
+  .admin-categories-page__add {
+    width: 100%;
+  }
+
+
+  .admin-categories-toolbar {
+    align-items:
+      stretch;
+
+    flex-direction:
+      column;
+  }
+
+
+  .admin-categories-toolbar input {
+    max-width: none;
+  }
+}

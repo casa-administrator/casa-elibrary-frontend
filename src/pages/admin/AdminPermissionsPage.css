@@ -1,0 +1,713 @@
+.admin-permissions-page {
+  width: 100%;
+}
+
+
+.admin-permissions-page__header {
+  margin-bottom: 24px;
+}
+
+
+.admin-permissions-page__header h1 {
+  margin:
+    0 0 7px;
+
+  font-size:
+    clamp(
+      25px,
+      4vw,
+      34px
+    );
+}
+
+
+.admin-permissions-page__header p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  line-height: 1.6;
+}
+
+
+/* Layout */
+
+.admin-permissions-layout {
+  display: grid;
+
+  grid-template-columns:
+    290px
+    minmax(
+      0,
+      1fr
+    );
+
+  gap: 20px;
+
+  align-items: start;
+}
+
+
+/* Users */
+
+.admin-permissions-users {
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--color-surface);
+
+  box-shadow:
+    var(--shadow-sm);
+}
+
+
+.admin-permissions-users h2 {
+  margin: 0;
+
+  padding:
+    16px 16px 10px;
+
+  color:
+    var(--color-text-primary);
+
+  font-size: 15px;
+}
+
+
+.admin-permissions-users > input {
+  width:
+    calc(
+      100% - 32px
+    );
+
+  min-height: 40px;
+
+  margin:
+    0 16px 14px;
+
+  padding:
+    8px 11px;
+
+  border:
+    1px solid
+    var(--color-border-strong);
+
+  border-radius:
+    var(--radius-md);
+
+  outline: none;
+}
+
+
+.admin-permissions-users > input:focus {
+  border-color:
+    var(--color-primary-600);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(
+      18,
+      122,
+      62,
+      0.1
+    );
+}
+
+
+.admin-permissions-user-list {
+  max-height:
+    calc(
+      100vh - 280px
+    );
+
+  overflow-y: auto;
+
+  border-top:
+    1px solid
+    var(--color-border);
+}
+
+
+.admin-permissions-user {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    12px 14px;
+
+  border: 0;
+
+  border-bottom:
+    1px solid
+    var(--color-border);
+
+  background:
+    var(--color-surface);
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+.admin-permissions-user:hover {
+  background:
+    var(--color-primary-50);
+}
+
+
+.admin-permissions-user--active {
+  background:
+    var(--color-primary-50);
+
+  box-shadow:
+    inset 3px 0 0
+    var(--color-primary-600);
+}
+
+
+.admin-permissions-user__avatar {
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    center;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-primary-100);
+
+  color:
+    var(--color-primary-800);
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.admin-permissions-user__info {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.admin-permissions-user__info strong,
+.admin-permissions-user__info span {
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.admin-permissions-user__info strong {
+  color:
+    var(--color-text-primary);
+
+  font-size: 12px;
+}
+
+
+.admin-permissions-user__info span {
+  color:
+    var(--color-text-muted);
+
+  font-size: 10px;
+}
+
+
+.admin-permissions-user__inactive {
+  color:
+    var(--color-danger);
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+
+/* Permission content */
+
+.admin-permissions-content {
+  min-width: 0;
+}
+
+
+.admin-permissions-empty {
+  padding: 50px 24px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--color-surface);
+
+  text-align: center;
+}
+
+
+.admin-permissions-empty h3 {
+  margin:
+    0 0 7px;
+
+  color:
+    var(--color-text-primary);
+}
+
+
+.admin-permissions-empty p {
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+}
+
+
+.admin-permissions-user-header {
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap: 16px;
+
+  margin-bottom: 14px;
+}
+
+
+.admin-permissions-user-header h2 {
+  margin:
+    0 0 4px;
+
+  color:
+    var(--color-text-primary);
+
+  font-size: 20px;
+}
+
+
+.admin-permissions-user-header p {
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 12px;
+}
+
+
+.admin-permissions-user-status {
+  padding:
+    5px 9px;
+
+  border-radius: 999px;
+
+  background:
+    #f2f4f7;
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+.admin-permissions-user-status--active {
+  background:
+    var(--color-primary-50);
+
+  color:
+    var(--color-primary-700);
+}
+
+
+.admin-permissions-notice {
+  margin-bottom: 14px;
+
+  padding:
+    11px 13px;
+
+  border:
+    1px solid
+    var(--color-primary-200);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--color-primary-50);
+
+  color:
+    var(--color-primary-800);
+
+  font-size: 12px;
+}
+
+
+.admin-permissions-warning {
+  margin-bottom: 14px;
+
+  padding:
+    11px 13px;
+
+  border:
+    1px solid
+    #fedf89;
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    #fffaeb;
+
+  color:
+    #93370d;
+
+  font-size: 12px;
+}
+
+
+/* Table */
+
+.admin-permissions-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--color-surface);
+
+  box-shadow:
+    var(--shadow-sm);
+}
+
+
+.admin-permissions-table {
+  width: 100%;
+
+  min-width: 650px;
+
+  border-collapse:
+    collapse;
+}
+
+
+.admin-permissions-table th,
+.admin-permissions-table td {
+  padding:
+    14px 16px;
+
+  text-align: left;
+
+  border-bottom:
+    1px solid
+    var(--color-border);
+}
+
+
+.admin-permissions-table th {
+  background:
+    var(--color-surface-soft);
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.admin-permissions-table td {
+  color:
+    var(--color-text-secondary);
+
+  font-size: 12px;
+}
+
+
+.admin-permissions-table
+tbody
+tr:last-child
+td {
+  border-bottom: 0;
+}
+
+
+.admin-permissions-category {
+  min-width: 240px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.admin-permissions-category strong {
+  color:
+    var(--color-text-primary);
+
+  font-size: 13px;
+}
+
+
+.admin-permissions-category span {
+  max-width: 360px;
+
+  overflow: hidden;
+
+  color:
+    var(--color-text-muted);
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  font-size: 10px;
+}
+
+
+/* Switch */
+
+.permission-switch {
+  position: relative;
+
+  display:
+    inline-block;
+
+  width: 40px;
+
+  height: 22px;
+}
+
+
+.permission-switch input {
+  width: 0;
+
+  height: 0;
+
+  opacity: 0;
+}
+
+
+.permission-switch__track {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 999px;
+
+  background:
+    var(--color-border-strong);
+
+  cursor: pointer;
+
+  transition:
+    var(--transition-fast);
+}
+
+
+.permission-switch__track::before {
+  position: absolute;
+
+  content: "";
+
+  width: 16px;
+
+  height: 16px;
+
+  left: 3px;
+
+  top: 3px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    var(--shadow-sm);
+
+  transition:
+    var(--transition-fast);
+}
+
+
+.permission-switch
+input:checked +
+.permission-switch__track {
+  background:
+    var(--color-primary-600);
+}
+
+
+.permission-switch
+input:checked +
+.permission-switch__track::before {
+  transform:
+    translateX(18px);
+}
+
+
+.permission-switch
+input:disabled +
+.permission-switch__track {
+  opacity: 0.55;
+
+  cursor:
+    not-allowed;
+}
+
+
+/* Access badges */
+
+.admin-permissions-access {
+  display:
+    inline-flex;
+
+  padding:
+    4px 8px;
+
+  border-radius: 999px;
+
+  background:
+    #f2f4f7;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+.admin-permissions-access--view {
+  background:
+    #eff8ff;
+
+  color:
+    #175cd3;
+}
+
+
+.admin-permissions-access--full {
+  background:
+    var(--color-primary-50);
+
+  color:
+    var(--color-primary-700);
+}
+
+
+.admin-permissions-saving {
+  display: block;
+
+  margin-top: 4px;
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 9px;
+}
+
+
+/* States */
+
+.admin-permissions-state {
+  padding: 26px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--color-surface);
+}
+
+
+.admin-permissions-state--error {
+  margin-bottom: 16px;
+
+  color:
+    var(--color-danger);
+}
+
+
+@media (
+  max-width: 900px
+) {
+  .admin-permissions-layout {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .admin-permissions-user-list {
+    max-height: 300px;
+  }
+}
+
+
+@media (
+  max-width: 639px
+) {
+  .admin-permissions-user-header {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+  }
+}

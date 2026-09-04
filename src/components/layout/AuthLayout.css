@@ -1,0 +1,198 @@
+.auth-layout {
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(420px, 0.9fr)
+    minmax(520px, 1.1fr);
+
+  background:
+    var(--color-surface);
+}
+
+
+/* BRAND PANEL */
+
+.auth-layout__brand-panel {
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  padding: 56px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--color-primary-900),
+      var(--color-primary-600)
+    );
+
+  color: white;
+}
+
+.auth-layout__brand {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  align-self: flex-start;
+}
+
+.auth-layout__logo {
+  width: 82px;
+  height: 82px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  background: white;
+
+  padding: 4px;
+}
+
+.auth-layout__brand h1 {
+  margin: 0 0 4px;
+
+  font-size: 25px;
+}
+
+.auth-layout__brand p {
+  max-width: 320px;
+
+  margin: 0;
+
+  opacity: 0.82;
+
+  line-height: 1.5;
+}
+
+
+/* Decorative circles */
+
+.auth-layout__decoration {
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  border-radius: 50%;
+
+  right: -180px;
+  bottom: -190px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  box-shadow:
+    -110px -90px 0
+    rgba(255, 255, 255, 0.04);
+}
+
+
+/* FORM SIDE */
+
+.auth-layout__content {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 88px 32px 56px;
+}
+
+.auth-layout__language {
+  position: absolute;
+
+  top: 26px;
+  right: 32px;
+}
+
+.auth-layout__card {
+  width: 100%;
+  max-width: 430px;
+}
+
+.auth-layout__footer {
+  position: absolute;
+
+  bottom: 24px;
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 12px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .auth-layout {
+    grid-template-columns:
+      1fr;
+  }
+
+  .auth-layout__brand-panel {
+    min-height: 190px;
+
+    padding: 32px;
+
+    align-items: center;
+  }
+
+  .auth-layout__content {
+    min-height:
+      calc(100vh - 190px);
+
+    padding:
+      72px 24px 52px;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 639px) {
+  .auth-layout__brand-panel {
+    min-height: 148px;
+
+    padding:
+      24px 20px;
+  }
+
+  .auth-layout__logo {
+    width: 62px;
+    height: 62px;
+  }
+
+  .auth-layout__brand h1 {
+    font-size: 20px;
+  }
+
+  .auth-layout__brand p {
+    font-size: 12px;
+  }
+
+  .auth-layout__content {
+    min-height:
+      calc(100vh - 148px);
+
+    padding:
+      70px 18px 48px;
+  }
+
+  .auth-layout__language {
+    right: 18px;
+    top: 18px;
+  }
+}
