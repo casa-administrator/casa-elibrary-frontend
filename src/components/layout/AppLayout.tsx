@@ -1,13 +1,9 @@
 import { type ReactNode, useState } from "react";
 
-// import { useTranslation } from "react-i18next";
-
-import { useNavigate } from "react-router-dom";
-
-import { useAuth } from "../../contexts/AuthContext";
-
 import Header from "./Header";
 import Sidebar from "./Sidebar";
+
+import { useAuth } from "../../contexts/AuthContext";
 
 import "./AppLayout.css";
 
@@ -15,22 +11,17 @@ interface AppLayoutProps {
   children: ReactNode;
 }
 
+const CASA_ADMIN_URL =
+  import.meta.env.VITE_CASA_CORE_URL ?? "http://admin.casa.local";
+
 export default function AppLayout({ children }: AppLayoutProps) {
-  // const { t } = useTranslation();
-
-  const navigate = useNavigate();
-
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const handleLogout = async () => {
-    await logout();
-
-    navigate("/login", {
-      replace: true,
-    });
-  };
+  function handleBackToAdministration() {
+    window.location.replace(`${CASA_ADMIN_URL.replace(/\/$/, "")}/dashboard`);
+  }
 
   return (
     <div className="app-layout">
@@ -38,15 +29,11 @@ export default function AppLayout({ children }: AppLayoutProps) {
         user={user}
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
-        onLogout={handleLogout}
+        onLogout={handleBackToAdministration}
       />
 
       <div className="app-layout__main">
-        <Header
-          user={user}
-          onMenu={() => setSidebarOpen(true)}
-          // onLogout={handleLogout}
-        />
+        <Header user={user} onMenu={() => setSidebarOpen(true)} />
 
         <main className="app-layout__content">{children}</main>
       </div>

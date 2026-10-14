@@ -116,15 +116,16 @@ export async function apiRequest<T>(
         "casa_login_email",
       );
 
+      const currentPath =
+        window.location.pathname;
 
-      if (
-        window.location.pathname !==
-          "/login" &&
-        window.location.pathname !==
-          "/verify-otp"
-      ) {
-        window.location.href =
-          "/login";
+      const isCasaSsoCallback =
+        currentPath === "/sso/callback";
+
+      if (!isCasaSsoCallback) {
+        window.location.replace(
+          "http://admin.casa.local/dashboard",
+        );
       }
     }
 

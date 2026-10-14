@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
 import { useAuth } from "../contexts/AuthContext";
 
@@ -17,17 +17,31 @@ import AdminCategoriesPage from "../pages/admin/AdminCategoriesPage";
 import AdminPermissionsPage from "../pages/admin/AdminPermissionsPage";
 import AdminAuditLogsPage from "../pages/admin/AdminAuditLogsPage";
 
+import SsoCallbackPage from "../pages/SsoCallbackPage";
 import AccessDeniedPage from "../pages/AccessDeniedPage";
 
 export default function AppRouter() {
   const { loading } = useAuth();
 
-  if (loading) {
+  const location = useLocation();
+
+  const isSsoCallback = location.pathname === "/sso/callback";
+
+  /*
+   * Keep the normal E-Library loading screen
+   * for the application.
+   *
+   * But never cover the CASA SSO callback,
+   * because that page has its own transition UI.
+   */
+  if (loading && !isSsoCallback) {
     return <AppLoadingScreen />;
   }
 
   return (
     <Routes>
+      <Route path="/sso/callback" element={<SsoCallbackPage />} />
+
       <Route path="/login" element={<LoginPage />} />
 
       <Route

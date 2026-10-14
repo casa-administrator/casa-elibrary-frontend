@@ -1,28 +1,22 @@
 import type { ReactNode } from "react";
 
-import { Navigate } from "react-router-dom";
-
 import { useAuth } from "../../contexts/AuthContext";
+
+const CASA_ADMIN_URL =
+  import.meta.env.VITE_CASA_CORE_URL ?? "http://admin.casa.local";
 
 export default function ProtectedRoute({ children }: { children: ReactNode }) {
   const { user, loading } = useAuth();
-
-  console.log("ProtectedRoute:", {
-    loading,
-    user,
-  });
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
   if (!user) {
-    console.log("No user - redirecting to login");
+    window.location.replace(`${CASA_ADMIN_URL.replace(/\/$/, "")}/dashboard`);
 
-    return <Navigate to="/login" replace />;
+    return <div>Redirecting to CASA Administration...</div>;
   }
-
-  console.log("User authenticated - allowing route");
 
   return children;
 }

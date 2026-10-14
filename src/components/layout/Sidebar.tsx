@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 import type { CurrentUser } from "../../api/auth";
 import "./Sidebar.css";
 import {
+  ArrowLeft,
   BookOpen,
   Building2,
   FileStack,
   History,
   KeyRound,
-  LogOut,
   Users,
   X,
 } from "lucide-react";
@@ -150,7 +150,7 @@ export default function Sidebar({
           )}
 
           <button type="button" className="sidebar__logout" onClick={onLogout}>
-            <LogOut size={18} strokeWidth={1.8} />
+            <ArrowLeft size={18} strokeWidth={1.8} />
           </button>
         </div>
       </aside>
